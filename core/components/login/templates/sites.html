@@ -1,0 +1,19 @@
+<ion-view view-title="{{ 'mm.login.login' | translate }}">
+  <ion-nav-buttons side="secondary">
+      
+  </ion-nav-buttons>
+  <ion-content>
+  <div class="list"><button class="button ion-edit button-negative" ng-click="toggleDelete()" ng-show='data.hasSites'> Fermer session</button>
+      <button class="button  ion-plus button-positive" ng-click="add()"> Nouvelle session</button></div>
+      <ion-list ng-repeat="site in sites track by $index" show-delete='data.showDelete'>
+        <ion-item class="item item-thumbnail-left item-remove-animate" ng-click="login(site.id)">
+          <ion-delete-button class="ion-minus-circled" ng-click='onItemDelete($event, $index)'></ion-delete-button>
+            <img ng-src="img/user-avatar.png" mm-external-content siteid="site.id">
+            <h2>{{site.fullname}} </h2>
+            <p><mm-format-text clean="true" watch="true">{{site.sitename}}</mm-format-text></p>
+        </a>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+

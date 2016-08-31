@@ -1,0 +1,60 @@
+<ion-view view-title="BIENVENUE">
+<ion-content style="background:url('img/evee-640x640-68.jpg');background-size:100%;background-repeat:no-repeat">
+<p><p></p></p></p>
+ 
+      <div class="list" >
+        
+
+
+        <form id="inner">
+       <div align="center" style="background:#3c8dbc; color: #FFF;"   does-continue="true" slide-interval="1000" on-slide-changed="slideChanged(index)" style="visibility: visible; color: #FFF;">            <div class="slider-slides" ng-transclude="" >
+          <ion-slide class="slider-slide" data-index="0" style="width: 100%; ">
+            <div id="logo">
+              <img src="img/logo.png">
+            </div>
+            
+            <p>
+               
+            </p>
+
+            <p>
+              Meducloud App
+            </p>
+          </ion-slide>
+        
+        </div>          <div class="slider-pager"><!-- ngRepeat: slide in numSlides() track by $index --><span class="slider-pager-page active" ng-repeat="slide in numSlides() track by $index" ng-class="{active: $index == currentSlide}"><i class="icon ion-record"></i></span><!-- end ngRepeat: slide in numSlides() track by $index --><span class="slider-pager-page" ng-repeat="slide in numSlides() track by $index" ng-class="{active: $index == currentSlide}"><i class="icon ion-record"></i></span><!-- end ngRepeat: slide in numSlides() track by $index --><span class="slider-pager-page" ng-repeat="slide in numSlides() track by $index" ng-class="{active: $index == currentSlide}"><i class="icon ion-record"></i></span><!-- end ngRepeat: slide in numSlides() track by $index --></div></div>
+<div align="center">
+            <input type="hidden"  placeholder="moodle.org" ng-model="siteurl" ng-init="siteurl='meducloud.com/education/'" value="moodle.org"  mm-no-input-validation ng-change="validate(siteurl)" >
+         
+          
+              <button   class="button button-block button-calm"  ng-click="connect(siteurl)" >Connecter...</button>
+          
+<p></p>
+ 
+          </div> 
+        </form>
+      </div>
+    </form>
+
+
+<div align="center" class="tabs tabs-icon-top">
+
+
+  <a ng-click="showHelp()" class="tab-item">
+    <i class="icon ion-navicon"></i>
+    Présentation
+  </a>
+
+
+<a  href="https://meducloud.com/activation/" class="tab-item">
+    <i class="icon ion-key"></i>
+    Activation
+  </a>
+</div>
+  </ion-content>
+</ion-view>
+
+
+
+
+

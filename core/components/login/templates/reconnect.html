@@ -1,0 +1,29 @@
+<ion-view view-title="{{ 'mm.login.reconnect' | translate }}">
+    <ion-content>
+        <div class="list">
+            <div class="item item-text-wrap">Compte expiré</div>
+            <div class="item">
+                
+                <div align="center" id="logo">
+              <img src="img/logo.png">
+            </div>
+            </div>
+            <div class="item">
+                <h2>{{ 'mm.login.username' | translate }}</h2>
+                <p>{{credentials.username}}</p>
+            </div>
+            <form>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{ 'mm.login.password' | translate }}</span>
+                    <input type="password" placeholder="{{ 'mm.login.password' | translate }}" ng-model="credentials.password">
+                </label>
+                <div class="item">
+                    <button class="button button-block button-calm" ng-click="login()">{{ 'mm.login.loginbutton' | translate }}</button>
+                </div>
+                <div class="item">
+                    <button class="button button-block button-positive" ng-click="cancel()">{{ 'mm.login.cancel' | translate }}</button>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

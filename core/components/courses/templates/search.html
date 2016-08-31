@@ -1,0 +1,36 @@
+<ion-view view-title="DATACENTER DES ECOLES">
+    <ion-content  padding="true">
+        <form class="list">
+         <img width="100%" ng-src="img/search.jpg" mm-external-content >
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Rechecher une école par nom, adresse,téléphone..." ng-model="searchText">
+            </label>
+            <button class="button button-block" ng-click="search(searchText)" ng-disabled="searchText.length < 3">
+                {{ 'mm.courses.search' | translate }}
+            </button>
+        </form>
+       <div ng-if="courses">
+            <div class="list">
+                <li class="item">{{ 'mm.courses.totalcoursesearchresults' | translate:{$a: total} }}</li>
+            </div>
+           
+           
+            <p ng-if="total == 0">Aucun résultat pour vous {{siteinfo.fullname}}..</p>
+            <section ng-repeat="course in courses track by course.id" class="list card">
+                <a class="item item-divider" ui-sref="site.mm_viewresult({course: course})" title="{{course.fullname}}">
+                    <h2><mm-format-text watch="true">{{course.fullname}}</mm-format-text></h2>
+                </a>
+                <div class="item item-text-wrap" ng-if="course.summary">
+                    <p>
+                        <summary>
+                            <mm-format-text class="mm-content-with-float" watch="true" >{{course.summary}}</mm-format-text>
+                        </summary>
+                    </p>
+                </div>
+            </section>
+            <ion-infinite-scroll ng-if="canLoadMore" immediate-check="false" on-infinite="loadMoreResults()">
+            </ion-infinite-scroll>
+        </div>
+    </ion-content>
+</ion-view>

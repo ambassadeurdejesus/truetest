@@ -1,0 +1,22 @@
+<ion-view view-title="{{'mma.files.uploadafile' | translate}}">
+    <ion-content>
+        <div class="list">
+            <a class="item" ng-click="upload('album')">
+                Votre album scolaire
+            </a>
+            <a class="item" ng-click="upload('camera')">
+                Photo tableau, cahier, livre ect... 
+            </a>
+            <a class="item" ng-click="upload('audio')">
+                Un message audio du professeur,école ect...
+            </a>
+           
+            <div class="item" ng-if="isAndroid">
+               Télécharger un fichier de Meducloud
+                <input class="mma-files-picker" type="file" mma-files-on-change="uploadFile"> <!-- Hidden input, intercepts clicks on button-->
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+

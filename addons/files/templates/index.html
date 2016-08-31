@@ -1,0 +1,25 @@
+<ion-view view-title="Mes archives Meducloud">
+    <ion-content padding="true">
+        <section ng-if="canAccessFiles()">
+            <section class="list card" ng-if="showPrivateFiles()">
+                <a ui-sref="site.files-list({root: 'my'})" class="item item-icon-right" title="{{ 'mma.files.myprivatefiles' | translate }}">
+                    <i class="icon ion-ios-arrow-right"></i>
+                    Mes archives Meducloud
+                </a>
+                <div class="item item-text-wrap"><p>Bulletin scolaire, factures, reçus de paiement, ect...</p> <p>
+                    N'oubliez surtout pas d'archiver des documents qui ont rapport à Meducloud. Dans le cas contraire, votre compte pourrait être supprimé de notre système, merci de votre compréhension.
+                </p></div>
+            </section>
+
+
+        <section ng-if="showUpload()">
+            <div class="card">
+                <h2 class="item-body">{{ 'mma.files.uploadfiles' | translate }}</h2>
+                <p class="item-body">{{ 'mma.files.clicktoupload' | translate }}</p>
+            </div>
+            <a class="button button-block" ng-click="add()">
+                <i class="icon ion-plus"></i> {{ 'mma.files.uploadafile' | translate }}
+            </a>
+        </section>
+    </ion-content>
+</ion-view>
